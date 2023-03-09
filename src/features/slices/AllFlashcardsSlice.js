@@ -4,7 +4,6 @@ import axios from "axios";
 export const fetchFlashcardsAsync = createAsyncThunk("flashcards/fetchAll", async () => {
   try {
     const { data } = await axios.get("/api/flashcards");
-    console.log(data);
     return data;
   } catch (err) {
     console.error(err);

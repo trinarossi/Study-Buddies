@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 //import AuthForm from "../features/auth/AuthForm";
 import Home from "../features/pages/Home";
+import AllFlashcards from "../features/pages/AllFlashcards";
 import { me } from "./store";
 /**
  * Component for all approutes
@@ -14,23 +15,25 @@ const AppRoutes = () => {
   const dispatch = useDispatch();
 
   // dipatches authentication and retrieves token once when component mounts
-  useEffect(() => {
-    dispatch(me());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(me());
+  // }, []);
 
   return (
     <div>
       {isLoggedIn ?(
           // Routes for Logged in users
           <Routes>
-            <Route to="/home" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/*" element={<Home />} />
+            <Route path="/flashcards" element={<AllFlashcards />} />
           </Routes>
       ) : (
         // Routes for not logged in users
         <Routes>
           <Route to="/home" element={<Home />} />
           <Route path="/*" element={<Home />} />
+          <Route path="/flashcards" element={<AllFlashcards />} />
         </Routes>
       )}
     </div>
