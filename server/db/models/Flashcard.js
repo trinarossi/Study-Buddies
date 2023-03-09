@@ -12,6 +12,12 @@ const Flashcard = db.define("flashcard", {
     allowNull: false,
     allowEmpty: false
   },
+  subject: {
+    type: Sequelize.STRING
+  },
+  gradeLevel: {
+    type: Sequelize.INTEGER
+  }
 })
 
 module.exports = Flashcard;
