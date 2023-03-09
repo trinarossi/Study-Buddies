@@ -1,8 +1,6 @@
 // API routes for the authorization piece
 const router = require("express").Router();
-const {
-  models: { User },
-} = require("../db");
+const { User } = require("../db");
 
 module.exports = router;
 
