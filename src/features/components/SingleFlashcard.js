@@ -14,9 +14,6 @@ const SingleFlashcard = ({ flashcard }) => {
     return user.pet?.points + 1;
   };
 
-  console.log(`points: ${user.pet?.points}`);
-  console.log(`petId: ${petId}`)
-
   useEffect(() => {
     dispatch(fetchSingleUser(id));
   }, [dispatch, id]);
@@ -35,17 +32,16 @@ const SingleFlashcard = ({ flashcard }) => {
             {flashcard.options.map((option) => {
               return (
                 <li
-                  key={option.id}
                   onClick={() => {
-                    console.log(option.answer);
+                    console.log(option);
                     console.log(flashcard.answer);
-                    if (option.answer === flashcard.answer) {
+                    if (option === flashcard.answer) {
                       handleAddPoint();
                     };
                     setFlip(!flip);
                   }}
                 >
-                  {option.answer}
+                  {option}
                 </li>
               );
             })}

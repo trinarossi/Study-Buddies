@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const { Flashcard, Option } = require("../db");
+const { Flashcard, Deck } = require("../db");
 
 //get route for all flashcards
 router.get("/", async (req, res, next) => {
   try {
     const flashcards = await Flashcard.findAll({
-      include: { model: Option }
+      include: { model: Deck }
     });
     res.json(flashcards);
   } catch (err) {
@@ -17,7 +17,7 @@ router.get("/", async (req, res, next) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const flashcard = await Flashcard.findByPk(req.params.id, {
-      include: { model: Option }
+      include: { model: Deck }
     });
     res.json(flashcard);
   } catch(err) {

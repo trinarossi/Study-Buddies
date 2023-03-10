@@ -5,18 +5,26 @@ const Flashcard = db.define("flashcard", {
   question: {
     type: Sequelize.TEXT,
     allowNull: false,
-    allowEmpty: false
+    validate: {
+      notEmpty: true
+    }
   },
   answer: {
     type: Sequelize.STRING,
     allowNull: false,
-    allowEmpty: false
+    validate: {
+      notEmpty: true
+    }
   },
   subject: {
     type: Sequelize.STRING
   },
   gradeLevel: {
-    type: Sequelize.INTEGER
+    type: Sequelize.STRING
+  },
+  options: {
+    type: Sequelize.ARRAY(Sequelize.TEXT),
+    defaultValue: []
   }
 })
 
