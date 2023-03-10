@@ -10,7 +10,7 @@ const SingleFlashcard = ({ flashcard }) => {
         <div>
           <ol type="A">
             {flashcard.options.map((option) => {
-              return <li onClick={() => setFlip(!flip)}>{option.answer}</li>;
+              return <li key={option.id} onClick={() => setFlip(!flip)}>{option.answer}</li>;
             })}
           </ol>
         </div>

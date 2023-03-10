@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container button {
+  border: none;
+background-color: mediumaquamarine;
+color: white;
+border-radius: 5px; 
+}
