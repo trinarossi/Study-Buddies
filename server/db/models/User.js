@@ -28,8 +28,9 @@ const User = db.define("user", {
   lastName: {
     type: Sequelize.STRING,
   },
-  address: {
-    type: Sequelize.STRING,
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
   }
 });
 
