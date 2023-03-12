@@ -16,8 +16,8 @@ const AllDecks = () => {
       <h1>All Decks</h1>
       <div>
         {decks?.map((deck) => (
-          <Link>
-            <div key={deck.id}>
+          <Link to={`/decks/${deck.id}`} key={deck.id}>
+            <div>
               <h1>{deck.name}</h1>
             </div>
           </Link>

@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 //import AuthForm from "../features/auth/AuthForm";
 import Home from "../features/pages/Home";
 import AllDecks from "../features/pages/AllDecks";
+import SingleDeck from "../features/pages/SingleDeck";
 import AuthForm from "../features/auth/AuthForm"
 import { me } from "./store";
 /**
@@ -28,6 +29,7 @@ const AppRoutes = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/*" element={<Home />} />
             <Route path="/decks" element={<AllDecks />} />
+            <Route path="/decks/:id" element={<SingleDeck />} />
           </Routes>
       ) : (
         // Routes for not logged in users
@@ -35,6 +37,7 @@ const AppRoutes = () => {
           <Route to="/home" element={<Home />} />
           <Route path="/*" element={<Home />} />
           <Route path="/decks" element={<AllDecks />} />
+          <Route path="/decks/:id" element={<SingleDeck />} />
           <Route
             path="/login"
             element={<AuthForm name="login" displayName="Login" />}
