@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 //import AuthForm from "../features/auth/AuthForm";
 import Home from "../features/pages/Home";
-import AllFlashcards from "../features/pages/AllFlashcards";
+import AllDecks from "../features/pages/AllDecks";
 import AuthForm from "../features/auth/AuthForm"
 import { me } from "./store";
 /**
@@ -27,14 +27,14 @@ const AppRoutes = () => {
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/*" element={<Home />} />
-            <Route path="/flashcards" element={<AllFlashcards />} />
+            <Route path="/decks" element={<AllDecks />} />
           </Routes>
       ) : (
         // Routes for not logged in users
         <Routes>
           <Route to="/home" element={<Home />} />
           <Route path="/*" element={<Home />} />
-          <Route path="/flashcards" element={<AllFlashcards />} />
+          <Route path="/decks" element={<AllDecks />} />
           <Route
             path="/login"
             element={<AuthForm name="login" displayName="Login" />}

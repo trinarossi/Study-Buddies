@@ -30,7 +30,7 @@ const Navbar = () => {
           <div className={styles.container}>
             <h1>Study Buddies</h1>
             <Link to="/home">Home</Link>
-            <Link to="/flashcards">All Flashcards</Link>
+            <Link to="/decks">All Flashcards</Link>
             <Link>My Decks</Link>
             <Link>My Pet</Link>
             <button onClick={logoutAndRedirectHome}>Logout</button>
@@ -40,7 +40,7 @@ const Navbar = () => {
           <div className={styles.container}>
             <h1>Study Buddies</h1>
             <Link to="/home">Home</Link>
-            <Link to="/flashcards">All Flashcards</Link>
+            <Link to="/decks">All Flashcards</Link>
             <Link>My Decks</Link>
             <Link>My Pet</Link>
             <button onClick={logoutAndRedirectHome}>Logout</button>
